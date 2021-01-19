@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var pageController: UIPageControl!
+    
     @IBOutlet weak var pipeBtn: UIButton!
     
     override func viewDidLoad() {
@@ -26,4 +28,12 @@ class ViewController: UIViewController {
     }
     
 }
+
+extension ViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let page = scrollView.contentOffset.x / scrollView.bounds.width
+                pageController.currentPage = Int(page)
+        }
+}
+
 

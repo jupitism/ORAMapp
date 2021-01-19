@@ -18,20 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="DZn-4c-45A">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="DZn-4c-45A">
                                 <rect key="frame" x="145.5" y="755" width="123" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="AXQ-2P-OLq"/>
                                     <constraint firstAttribute="width" constant="123" id="k2S-hk-iyo"/>
                                 </constraints>
-                                <color key="pageIndicatorTintColor" systemColor="systemOrangeColor"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemOrangeColor"/>
                             </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wMG-mR-pgL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="WoH-e8-fOo">
-                                        <rect key="frame" x="0.0" y="356" width="600" height="150"/>
+                                        <rect key="frame" x="0.0" y="356" width="1656" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CN6-XQ-b9y">
@@ -83,9 +83,12 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="RKq-1Z-piw"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
-                                        <size key="value" width="1251" height="0.0"/>
+                                        <size key="value" width="1656" height="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="EK8-th-KaD"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -99,6 +102,7 @@
                         <imageReference key="image" image="circle.grid.3x3.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="pageController" destination="DZn-4c-45A" id="TJC-hx-TcF"/>
                         <outlet property="pipeBtn" destination="CN6-XQ-b9y" id="WW1-Ae-Dcx"/>
                     </connections>
                 </viewController>
