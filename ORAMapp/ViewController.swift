@@ -33,7 +33,7 @@ extension ViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let page = scrollView.contentOffset.x / scrollView.bounds.width
                 pageController.currentPage = Int(page)
-        }
+    }
 }
 
 
