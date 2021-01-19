@@ -10,12 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var pageController: UIPageControl!
+    var fullSize :CGSize!
     
+    @IBOutlet weak var myScrollView: UIScrollView!
+    @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var pipeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fullSize = UIScreen.main.bounds.size
+        myScrollView.frame = CGRect(x: 0, y: 0, width: fullSize.width, height: fullSize.height)
+        myScrollView.contentSize = CGSize(width: fullSize.width * 4, height: fullSize.height)
     }
 
     override func didReceiveMemoryWarning() {

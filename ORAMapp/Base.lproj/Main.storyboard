@@ -19,10 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="DZn-4c-45A">
-                                <rect key="frame" x="145.5" y="755" width="123" height="28"/>
+                                <rect key="frame" x="0.0" y="755" width="414" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="AXQ-2P-OLq"/>
-                                    <constraint firstAttribute="width" constant="123" id="k2S-hk-iyo"/>
                                 </constraints>
                                 <color key="currentPageIndicatorTintColor" systemColor="systemGreenColor"/>
                             </pageControl>
@@ -114,11 +113,6 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="7ar-FI-Xoc"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="RKq-1Z-piw"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
-                                        <size key="value" width="1656" height="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="EK8-th-KaD"/>
                                 </connections>
@@ -128,6 +122,8 @@
                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DZn-4c-45A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2n2-CT-N8P"/>
+                            <constraint firstItem="DZn-4c-45A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eBo-oN-mPg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DZn-4c-45A" secondAttribute="trailing" id="npt-bE-Wad"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DZn-4c-45A" secondAttribute="bottom" constant="30" id="ocJ-UW-xdi"/>
                         </constraints>
                     </view>
@@ -135,6 +131,7 @@
                         <imageReference key="image" image="circle.grid.3x3.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="myScrollView" destination="wMG-mR-pgL" id="bNr-TC-yZD"/>
                         <outlet property="pageController" destination="DZn-4c-45A" id="TJC-hx-TcF"/>
                         <outlet property="pipeBtn" destination="CN6-XQ-b9y" id="WW1-Ae-Dcx"/>
                     </connections>
