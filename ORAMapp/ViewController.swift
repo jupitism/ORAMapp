@@ -27,7 +27,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //    tableview
         let titleArray = ["填報人","人孔所在區域","人孔所在路段","人孔編碼序號"]
-        let contentArray = ["中華電信","中路地區","中山路一段","A10021"]
+        // 帶入JSON解析後產生的變數
+        let contentArray = ["userName","manHoleZone","manHoleRd","manHoleID"]
         
         func numberOfSections(in tableView: UITableView) -> Int {
             return 1

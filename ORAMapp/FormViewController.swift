@@ -72,9 +72,13 @@ class FormViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             return
         }
     }
-
     
-    
+    // 帶入JSON解析後的變數，變成全域變數？給sendBtn用
+    func getValue() {
+        var pipeType = sizePickerText.text
+        var pipeCount = amountPickerText.text
+        var leadTube = lengthTextField.text
+    }
 
     
     @IBAction func closeBtn(_ sender: UIButton) {
@@ -82,8 +86,8 @@ class FormViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     @IBAction func sendBtn(_ sender: UIButton) {
-        if let sizeInputText = sizePickerText.text, let amountInputText = amountPickerText.text, let lengthInputText = lengthTextField.text {
-            if sizeInputText == "" || amountInputText == "" || lengthInputText == "" {
+        if let pipeType = sizePickerText.text, let pipeCount = amountPickerText.text, let leadTube = lengthTextField.text {
+            if pipeType == "" || pipeCount == "" || leadTube == "" {
                 // 沒點選，跳警告
                 let myAlert = UIAlertController(title: "無資料輸入", message: "請在輸入框填入資料", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "確認", style: .default, handler: nil)
