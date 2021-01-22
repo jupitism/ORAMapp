@@ -8,11 +8,12 @@
 
 import UIKit
 
-class FormViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class FormViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
 //    pickerview
     @IBOutlet weak var sizePickerText: UITextField!
     @IBOutlet weak var amountPickerText: UITextField!
+    @IBOutlet weak var lengthTextField: UITextField!
     
     let sizeArray = ["2英吋","3英吋","4英吋","4英吋-D34","4英吋-D40","5英吋","6英吋"]
     let amountArray = ["0條","1條","2條","3條","4條","5條"]
@@ -74,35 +75,15 @@ class FormViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     
     
-//    tableview
-    let titleArray = ["填報人","人孔所在區域","人孔所在路段","人孔編碼序號","填報項目"]
-    let contentArray = ["中華電信","中路地區","中山路一段","A10021","前視圖A1"]
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "pipeInfoCell")
-        cell.textLabel?.text = titleArray[indexPath.row]
-        cell.detailTextLabel?.text = contentArray[indexPath.row]
-        cell.textLabel?.textColor = .white
-        cell.detailTextLabel?.textColor = .systemGreen
-        cell.backgroundColor = UIColor.clear
-        return cell
-    }
+
     
     @IBAction func closeBtn(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func sendBtn(_ sender: UIButton) {
-        if let sizeInputText = sizePickerText.text, let amountInputText = amountPickerText.text {
-            if sizeInputText == "" || amountInputText == "" {
+        if let sizeInputText = sizePickerText.text, let amountInputText = amountPickerText.text, let lengthInputText = lengthTextField.text {
+            if sizeInputText == "" || amountInputText == "" || lengthInputText == "" {
                 // 沒點選，跳警告
                 let myAlert = UIAlertController(title: "無資料輸入", message: "請在輸入框填入資料", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "確認", style: .default, handler: nil)
